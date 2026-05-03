@@ -1,12 +1,14 @@
+[🇪🇸 Leer en español](README.es.md)
+
 # eco-social
 
-> Tu contenido suena a IA. El de tu competencia también. El de tu cliente, también.
+> Your content sounds like AI. Your competitor's does too. Your client's, too.
 >
-> Este skill existe para que eso deje de pasar.
+> This skill exists to make that stop.
 
-**eco-social** es un skill de Claude Code para gestión de RRSS y creación de contenido con criterio editorial real. No genera "contenido para redes" — genera contenido que una persona con oficio escribiría, verificado contra una rúbrica cuantificable antes de salir.
+**eco-social** is a Claude Code skill for social media management and content creation with real editorial judgment. It doesn't generate "social content" — it generates content a skilled human would write, verified against a quantifiable rubric before publishing.
 
-Construido por [Eco Consulting](https://ecoconsultingia.com) para uso interno. Publicado porque el slop es problema de todos.
+Built by [Eco Consulting](https://ecoconsultingia.com) for internal use. Published because slop is everyone's problem.
 
 ```bash
 npx skills add EcoConsulting/eco-social --yes --agent claude-code
@@ -14,105 +16,104 @@ npx skills add EcoConsulting/eco-social --yes --agent claude-code
 
 ---
 
-## Qué hace diferente
+## What makes it different
 
-La mayoría de herramientas de contenido para IA hacen esto:
-
-```
-"En el mundo empresarial actual, es importante señalar que la inteligencia
-artificial está revolucionando la forma en que las empresas operan..."
-```
-
-eco-social detecta **10 patrones AI** en ese párrafo, le da un **1/10**, y lo reescribe así:
+Most AI content tools produce this:
 
 ```
-"Una gestoría de 4 personas en Triana. 12 horas a la semana copiando datos
-entre Excel y su programa de facturación. Hoy lo hace un script que montamos
-en 3 días."
+"In today's fast-paced business world, it's important to note that artificial
+intelligence is revolutionizing the way companies operate..."
 ```
 
-**Score: 8/10.** Mismo mensaje. Cero slop.
+eco-social detects **10 AI patterns** in that paragraph, scores it **1/10**, and rewrites it:
+
+```
+"A 4-person accounting firm in Seville. 12 hours a week copying data between
+Excel and their invoicing software. Today a script we built in 3 days does it."
+```
+
+**Score: 8/10.** Same message. Zero slop.
 
 ---
 
-## 14 comandos
+## 14 commands
 
 ### Plan
 | | |
 |---|---|
-| `strategy` | Pilares de contenido, objectives, frecuencia |
-| `calendar` | Calendario editorial con fechas reales |
-| `voice` | Extrae la voz del cliente en 7 fases |
+| `strategy` | Content pillars, objectives, posting frequency |
+| `calendar` | Editorial calendar with real dates |
+| `voice` | Extract client voice in 7 phases |
 
 ### Create
 | | |
 |---|---|
-| `create` | Lote de 5-10 posts para una plataforma |
-| `thread` | Thread para X o LinkedIn |
-| `carousel` | Carousel slide-by-slide |
-| `repurpose` | Contenido largo → micro-contenido |
-| `hooks` | 5+ hooks con fórmulas probadas |
+| `create` | Batch of 5-10 posts for a platform |
+| `thread` | Multi-tweet thread for X or LinkedIn |
+| `carousel` | Slide-by-slide carousel |
+| `repurpose` | Long-form → micro-content atoms |
+| `hooks` | 5+ hooks using proven formulas |
 
 ### Evaluate
 | | |
 |---|---|
 | `critique` | Seven Sweeps + anti-slop scoring |
-| `de-slop` | Limpia patrones AI, puntúa 0-10 |
-| `audit` | Audita presencia y engagement |
+| `de-slop` | Remove AI patterns, score 0-10 |
+| `audit` | Audit presence and engagement |
 
 ### Execute
 | | |
 |---|---|
-| `adapt` | Adapta entre plataformas |
-| `engage` | Replies de valor para engagement |
-| `publish` | Publica via MCP con confirmación |
+| `adapt` | Adapt between platforms |
+| `engage` | Value-adding replies for engagement |
+| `publish` | Publish via MCP with confirmation |
 
 ---
 
-## Anti-slop: no es opinión, es rúbrica
+## Anti-slop: not vibes, a rubric
 
-El scoring se basa en 4 métricas medibles:
+Scoring is based on 4 measurable metrics:
 
-| Métrica | Qué mide | Bien | Slop |
-|---------|----------|------|------|
-| **Pattern count** | Patrones AI / 1000 palabras | <3 | >8 |
-| **Sentence variance** | Variación de longitud de frase | CoV >0.35 | CoV <0.20 |
-| **Specificity ratio** | Nombres y números vs vaguedades | >2:1 | <1.5:1 |
-| **Voice alignment** | Consistencia con la voz del cliente | Alineado | Ausente |
+| Metric | What it measures | Good | Slop |
+|--------|-----------------|------|------|
+| **Pattern count** | AI patterns / 1000 words | <3 | >8 |
+| **Sentence variance** | Sentence length variation | CoV >0.35 | CoV <0.20 |
+| **Specificity ratio** | Names & numbers vs vagueness | >2:1 | <1.5:1 |
+| **Voice alignment** | Consistency with client voice | Aligned | Absent |
 
-**Umbral: score ≥7 o reescribir.** Sin negociación.
+**Threshold: score ≥7 or rewrite.** No negotiation.
 
-50+ patrones catalogados con reemplazo concreto. "Moreover" → punto y seguido. "Utilizar" → "usar". "Transformación digital" → describir qué se digitaliza.
-
----
-
-## Cómo funciona
-
-El skill consume tres documentos de tu proyecto (no incluidos — los creas por cliente):
-
-- **DESIGN.md** — quién es la marca (tono, personalidad, paleta)
-- **product_rrss.md** — specs por plataforma, bios, pilares
-- **community_manager.md** — metodología editorial
-
-Un sistema de 5 gates verifica que todo está en su sitio antes de generar nada. Sin contexto no hay contenido — solo slop.
-
-Cada comando sigue el **Execution Protocol Karpathy**:
-
-1. **Think Before** — ¿es el comando correcto? ¿falta información?
-2. **Simplicity** — mínimo output que resuelve el problema
-3. **Surgical** — solo lo pedido, no expandir scope
-4. **Goal-Driven** — criterio de éxito verificable antes de producir
+50+ cataloged patterns with concrete replacements. "Moreover" → period. "Utilize" → "use". "Digital transformation" → describe what you're actually digitizing.
 
 ---
 
-## Construido a partir de
+## How it works
 
-Investigación profunda de 5 repos de skills de marketing y SEO (187 skills analizados en total), destilado con los principios de [Andrej Karpathy](https://github.com/karpathy) como criterio universal de simplicidad.
+The skill consumes three project-level documents (not included — you create them per client):
 
-Arquitectura inspirada en [impeccable](https://github.com/pbakaus/impeccable) (gate system, progressive disclosure, platform registers).
+- **DESIGN.md** — who the brand is (tone, personality, palette)
+- **product_rrss.md** — platform specs, bios, content pillars
+- **community_manager.md** — editorial methodology
+
+A 5-gate system verifies everything is in place before generating anything. No context, no content — only slop.
+
+Every command follows the **Karpathy Execution Protocol**:
+
+1. **Think Before** — is this the right command? is anything missing?
+2. **Simplicity** — minimum output that solves the problem
+3. **Surgical** — only what was asked, don't expand scope
+4. **Goal-Driven** — verifiable success criterion before producing
 
 ---
 
-## Licencia
+## Built from
 
-MIT — úsalo, modifícalo, mejóralo.
+Deep research of 5 marketing and SEO skill repos (187 skills analyzed), distilled using [Andrej Karpathy's](https://github.com/karpathy) principles as universal simplicity criteria.
+
+Architecture inspired by [impeccable](https://github.com/pbakaus/impeccable) (gate system, progressive disclosure, platform registers).
+
+---
+
+## License
+
+MIT — use it, modify it, improve it.
